@@ -15,20 +15,7 @@
     </div>
     <div class="blue-green-test-result-text w-full mt-0 bg-white">
       <p class="result-text">
-        <i>Your</i> boundary is at hue {{ Math.round(userThreshold) }},
-        <span v-if="greenInclusive > 0.55">
-          For <i>you</i>,
-          hue 45 (the mid point between yellow and orange)
-          <span class="color-chip mr-1"></span>
-          is orange.
-        </span>
-        <span v-else-if="greenInclusive < 0.45">
-          For
-          <i>you</i>, hue 45 (the midpoint between yellow and orange)
-          <span class="color-chip mr-1"></span>
-          is yellow.
-        </span>
-        <span v-else> You're a true neutral. </span>
+        <i>Your</i> boundary is at hue {{ Math.round(userThreshold) }}
       </p>
     </div>
   </div>
