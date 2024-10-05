@@ -36,7 +36,7 @@ if __name__ == "__main__":
             src = in_file.read()
 
         for SIGIL, REPLACEMENT in SUBSTITUTIONS:
-            src = src.relpace(SIGIL, REPLACEMENT)
+            src = src.replace(SIGIL, REPLACEMENT)
 
         with open(path, "w") as out_file:
             out_file.write(src)
