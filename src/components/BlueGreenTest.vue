@@ -22,7 +22,7 @@
       </div>
       <div v-if="rounds < MAX_ROUNDS" class="blue-green-test-button-container three-buttons">
         <button @click="selectColor('COLOR_NAME_A')" class="blue-green-test-button blue-button grow-button">
-          This is COLOR_NAME_A
+          This is more COLOR_NAME_A
         </button>
         <button @click="reset" class="blue-green-test-button mid-reset-button grow-button">
           Reset
@@ -31,7 +31,7 @@
           @click="selectColor('COLOR_NAME_B')"
           class="blue-green-test-button green-button grow-button"
         >
-          This is COLOR_NAME_B
+          This is more COLOR_NAME_B
         </button>
       </div>
       <div v-else class="blue-green-test-button-container two-buttons">
@@ -300,7 +300,7 @@ export default {
       // Get the new probe value
       const { b, newProbe, polarity } = fitSigmoid(
         this.responses.map((r) => r.hue),
-        this.responses.map((r) => r.response === 'COLOR_NAME_A'),
+        this.responses.map((r) => r.response === 'COLOR_NAME_B'),
         this.polarity,
         0.4
       )
