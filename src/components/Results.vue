@@ -4,12 +4,12 @@
       <svg ref="svg" class="w-full h-96"></svg>
       <div class="absolute top-0 left-0 p-1">
         <div class="blue-green-test-result-color">
-          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> orange</p>
+          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> COLOR_NAME_B</p>
         </div>
       </div>
       <div class="absolute top-0 right-0 p-1">
         <div class="blue-green-test-result-color">
-          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> yellow</p>
+          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> COLOR_NAME_A</p>
         </div>
       </div>
     </div>
@@ -60,8 +60,8 @@ export default {
       const innerWidth = width - margin.left - margin.right
       const innerHeight = height - margin.top - margin.bottom
 
-      let range_l = 31
-      let range_r = 59
+      let range_l = COLOR_HUE_A + 1
+      let range_r = COLOR_HUE_B - 1
       const x = d3.scaleLinear().domain([range_l, range_r]).range([0, innerWidth])
       const y = d3.scaleLinear().domain([0, 1]).range([innerHeight, 0])
 
@@ -232,7 +232,7 @@ svg {
   display: inline-block;
   width: 1em;
   height: 1em;
-  background-color: hsl(45, 100%, 50%);
+  background-color: hsl(COLOR_HUE_MIDPOINT, 100%, 50%);
   border: 2px solid black;
   border-radius: 0.2em;
   margin-bottom: -0.2em;
