@@ -7,7 +7,7 @@
             <span class="background-white">Test <i>your</i> color categorization</span>
           </h1>
           <h1 v-else key="main" class="blue-green-test-title">
-            <span class="background-white">COLOR_TITLE_A COLOR_TITE_B Threshold Test</span>
+            <span class="background-white">COLOR_TITLE_A COLOR_TITLE_B Threshold Test</span>
           </h1>
         </transition>
       </div>
