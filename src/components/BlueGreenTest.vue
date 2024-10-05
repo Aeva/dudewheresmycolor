@@ -7,7 +7,7 @@
             <span class="background-white">Test <i>your</i> color categorization</span>
           </h1>
           <h1 v-else key="main" class="blue-green-test-title">
-            <span class="background-white">COLOR_TITLE_A COLOR_TITLE_B Threshold Test</span>
+            <span class="background-white">Blue Red Threshold Test</span>
           </h1>
         </transition>
       </div>
@@ -21,17 +21,17 @@
         />
       </div>
       <div v-if="rounds < MAX_ROUNDS" class="blue-green-test-button-container three-buttons">
-        <button @click="selectColor('COLOR_NAME_A')" class="blue-green-test-button blue-button grow-button">
-          This is more COLOR_NAME_A
+        <button @click="selectColor('blue')" class="blue-green-test-button blue-button grow-button">
+          This is more blue
         </button>
         <button @click="reset" class="blue-green-test-button mid-reset-button grow-button">
           Reset
         </button>
         <button
-          @click="selectColor('COLOR_NAME_B')"
+          @click="selectColor('red')"
           class="blue-green-test-button green-button grow-button"
         >
-          This is more COLOR_NAME_B
+          This is more red
         </button>
       </div>
       <div v-else class="blue-green-test-button-container two-buttons">
@@ -240,7 +240,7 @@ export default {
   data() {
     return {
       MAX_ROUNDS: MAX_ROUNDS,
-      currentHue: Math.random() > 0.5 ? COLOR_HUE_A : COLOR_HUE_B,
+      currentHue: Math.random() > 0.5 ? 240 : 360,
       showInitialMessage: true,
       polarity: 0,
       rounds: 0,
@@ -300,7 +300,7 @@ export default {
       // Get the new probe value
       const { b, newProbe, polarity } = fitSigmoid(
         this.responses.map((r) => r.hue),
-        this.responses.map((r) => r.response === 'COLOR_NAME_B'),
+        this.responses.map((r) => r.response === 'red'),
         this.polarity,
         0.4
       )
@@ -308,7 +308,7 @@ export default {
       this.currentHue = newProbe
       this.rounds++
       if (this.rounds === MAX_ROUNDS) {
-        this.finalHue = COLOR_HUE_MIDPOINT - b
+        this.finalHue = 300 - b
         this.currentHue = this.finalHue
         confetti()
       }
@@ -319,7 +319,7 @@ export default {
     },
     reset() {
       this.anonymousId = this.generateAnonymousId()
-      this.currentHue = Math.random() > 0.5 ? COLOR_HUE_A : COLOR_HUE_B
+      this.currentHue = Math.random() > 0.5 ? 240 : 360
       this.rounds = 0
       this.finalHue = 0
       this.showInitialMessage = true
