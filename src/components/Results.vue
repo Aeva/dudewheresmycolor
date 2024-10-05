@@ -4,18 +4,25 @@
       <svg ref="svg" class="w-full h-96"></svg>
       <div class="absolute top-0 left-0 p-1">
         <div class="blue-green-test-result-color">
-          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> COLOR_NAME_B</p>
+          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> COLOR_NAME_A</p>
         </div>
       </div>
       <div class="absolute top-0 right-0 p-1">
         <div class="blue-green-test-result-color">
-          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> COLOR_NAME_A</p>
+          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> COLOR_NAME_B</p>
         </div>
       </div>
     </div>
     <div class="blue-green-test-result-text w-full mt-0 bg-white">
       <p class="result-text">
+        <div style="position:absolute; left:1em">
+          COLOR_NAME_A is COLOR_HUE_A
+        </div>
+        <div style="position:absolute; right:1em">
+          COLOR_NAME_B is COLOR_HUE_B
+        </div>
         <i>Your</i> boundary is at hue {{ Math.round(userThreshold) }}
+        <br/>
       </p>
     </div>
   </div>
