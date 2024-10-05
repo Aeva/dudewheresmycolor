@@ -4,22 +4,22 @@
       <svg ref="svg" class="w-full h-96"></svg>
       <div class="absolute top-0 left-0 p-1">
         <div class="blue-green-test-result-color">
-          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> COLOR_NAME_A</p>
+          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> red</p>
         </div>
       </div>
       <div class="absolute top-0 right-0 p-1">
         <div class="blue-green-test-result-color">
-          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> COLOR_NAME_B</p>
+          <p class="result-text bg-white bg-opacity-70 p-1 rounded"><i>Your</i> green</p>
         </div>
       </div>
     </div>
     <div class="blue-green-test-result-text w-full mt-0 bg-white">
       <p class="result-text">
         <div style="position:absolute; left:1em">
-          COLOR_NAME_A is COLOR_HUE_A
+          red is 0
         </div>
         <div style="position:absolute; right:1em">
-          COLOR_NAME_B is COLOR_HUE_B
+          green is 120
         </div>
         <i>Your</i> boundary is at hue {{ Math.round(userThreshold) }}
         <br/>
@@ -67,8 +67,8 @@ export default {
       const innerWidth = width - margin.left - margin.right
       const innerHeight = height - margin.top - margin.bottom
 
-      let range_l = COLOR_HUE_A + 1
-      let range_r = COLOR_HUE_B - 1
+      let range_l = 0 + 1
+      let range_r = 120 - 1
       const x = d3.scaleLinear().domain([range_l, range_r]).range([0, innerWidth])
       const y = d3.scaleLinear().domain([0, 1]).range([innerHeight, 0])
 
@@ -239,7 +239,7 @@ svg {
   display: inline-block;
   width: 1em;
   height: 1em;
-  background-color: hsl(COLOR_HUE_MIDPOINT, 100%, 50%);
+  background-color: hsl(60, 100%, 50%);
   border: 2px solid black;
   border-radius: 0.2em;
   margin-bottom: -0.2em;

@@ -2,11 +2,11 @@
 import os.path
 
 
-COLOR_HUE_A = 240
-COLOR_NAME_A = "blue"
+COLOR_HUE_A = 0
+COLOR_NAME_A = "red"
 
-COLOR_HUE_B = 360
-COLOR_NAME_B = "red"
+COLOR_HUE_B = 120
+COLOR_NAME_B = "green"
 
 
 assert(COLOR_HUE_A >= 0)
